@@ -18,7 +18,7 @@ function GetAllUsers()
 function GetUserIdFromUserAndPassword($username, $password)
 {
   global $PDO;
-  $response = $PDO->prepare("SELECT id FROM user WHERE nickname = :username AND password = MD5(:password) ");
+  $response = $PDO->prepare("SELECT id FROM user WHERE nickname = :username AND password = :password ");
   $response->execute(
     array(
       "username" => $username,
